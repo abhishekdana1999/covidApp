@@ -1,0 +1,40 @@
+.profile{
+    border-bottom: 1px solid rgba(126, 126, 126, 0.25);
+    font-family: 'Ubuntu';
+    &-header{
+        margin: 12px auto 25px auto;
+        justify-content: left;
+        align-items: center;
+        padding: 16px auto;
+
+        & ion-avatar{
+            margin-right: 10%;
+        }
+
+        
+
+        &-content{
+            & h4{
+                font-family: 'Ubuntu';
+                
+                margin: 0;
+            }
+            & small{
+                
+            }
+        }
+    }
+}
+
+ion-label{
+    font-family: 'Ubuntu' !important;
+    
+}
+
+ion-item {
+    margin: 10px auto;
+}
+
+ion-header::after{
+    background-image: none !important;
+}

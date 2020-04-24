@@ -1,0 +1,103 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title slot="start">
+      World
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="doRefresh($event)">
+        <ion-icon slot="start" name="refresh"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="bubbles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-card colot="step-600" class="bold">
+    <ion-card-content>
+      <table>
+        <tr>
+          <td colspan="2"><b><u>Total</u></b></td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td><b><u>New</u></b></td>
+        </tr><br />
+        <tr>
+          <td colspan="2">Cases : <ion-text color="secondary">{{global?.TotalConfirmed | number}}</ion-text>
+          </td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>Cases : <ion-text color="warning">{{global?.NewConfirmed | number}}</ion-text>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">Recovered : <ion-text color="success">{{global?.TotalRecovered | number}}</ion-text>
+          </td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>Recovered : <ion-text color="success">{{global?.NewRecovered | number}}</ion-text>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">Deaths : <ion-text color="secondary">{{global?.TotalDeaths | number}}</ion-text>
+          </td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>Deaths : <ion-text color="danger">{{global?.NewDeaths | number}}
+            </ion-text>
+          </td>
+        </tr>
+      </table>
+    </ion-card-content>
+  </ion-card>
+  <ion-card color="step-600" class="bold">
+    <ion-card-header>
+      <ion-card-title>World Cases</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas height="300" #horizontalBar></canvas>
+    </ion-card-content>
+  </ion-card>
+  <ion-card color="step-600" class="bold">
+    <ion-card-header>
+      <ion-card-title>Cases Percentage</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas height="300" #barChart></canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="step-600" class="bold">
+    <ion-card-header>
+      <ion-card-title>Top Confirmed Case Countries</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas height="300" #ConfirmedChart></canvas>
+    </ion-card-content>
+  </ion-card>
+
+
+  
+  <ion-card color="step-600" class="bold">
+    <ion-card-header>
+      <ion-card-title>Top Death Case Countries</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas height="300" #DeathChart></canvas>
+    </ion-card-content>
+  </ion-card>
+
+
+
+  <ion-card color="step-600" class="bold">
+    <ion-card-header>
+      <ion-card-title>Top Recovered Case Countries</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas height="300" #RecoveredChart></canvas>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

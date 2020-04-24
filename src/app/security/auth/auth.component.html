@@ -1,0 +1,54 @@
+<ion-content class="ion-no-padding">
+  <div class="background">
+    <span class="logo">
+      <img src="../../../assets/logo.png" alt="">
+      <br>
+
+    </span>
+  </div>
+  <div class="wrap-login100 p-t-50 p-b-90">
+    <form class="login100-form validate-form flex-sb flex-w" _lpchecked="1">
+      <span class="login100-form-title p-b-51">
+        Login
+      </span>
+      <div class="wrap-input100 validate-input m-b-16" data-validate="Username is required">
+        <input class="input100" type="email" [(ngModel)]="email" name="username" placeholder="Email" autocomplete="off" >
+        <span class="focus-input100"></span>
+      </div>
+      <div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
+        <input class="input100" type="password" [(ngModel)]="password" name="pass" placeholder="Password" autocomplete="off"
+        >
+        <span class="focus-input100"></span>
+      </div>
+      <div class="flex-sb-m w-full p-t-3 p-b-24">
+
+        <div>
+          <a href="#" [routerLink]="['/register']" class="txt1" style="float: left;margin-bottom: 16px;text-decoration: none;">
+            Register
+          </a>
+          <a href="#" [routerLink]="['/forgot']" class="txt1" style="float: right;margin-bottom: 16px;text-decoration: none;">
+            Forgot?
+          </a>
+        </div>
+      </div>
+      <div class="container-login100-form-btn m-t-17">
+        <button (click)="loginWithEmailPassword()" class="login100-form-btn">
+          Login
+        </button>
+      </div>
+      <hr>
+      <ion-row>
+          <ion-col size="6">
+            <button (click)="googleLogin()" class="login100-form-btn" style="width: 100%;">
+              Google 
+            </button>
+          </ion-col>
+          <ion-col size="6">
+            <button (click)="facebookLogin()" class="login100-form-btn" style="width: 100%;">
+              Facebook 
+            </button>
+          </ion-col>
+      </ion-row> 
+    </form>
+  </div>
+</ion-content>

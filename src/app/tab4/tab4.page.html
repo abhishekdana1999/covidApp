@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title slot="start">News</ion-title>
+   
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-searchbar  placeholder="Search News"  (ionChange)="onSearchChange($event)" ></ion-searchbar>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="newsData" class="ion-no-padding">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div *ngFor="let item of newsData.items" class="grid">
+    <ion-card  class="card">
+      <div class="card__image" >
+        <div class="card__overlay ">
+          <div  class="card__overlay-content">
+            <ul  class="card__meta ion-no-padding">
+              <li><ion-text ><i class="fa fa-tag"></i> {{newsData.feed.description}}</ion-text></li>
+              <li><ion-text ><i class="fa fa-clock-o"></i> {{item.pubDate | date: "MMM, dd"}}</ion-text></li>
+            </ul>
+            <a (click)="openUrl(item.link)" class="card__title">{{item.title}}</a>
+            <ul  class="card__meta card__meta--last ion-no-padding">
+              <li><ion-text ><i class="fa fa-user"></i> {{newsData.feed.author || "Author"}}</ion-text></li>
+              <li><ion-text ><i class="fa fa-facebook-square"></i> Share</ion-text></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </ion-card>
+</div>
+
+</ion-content>
+  

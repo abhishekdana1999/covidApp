@@ -1,0 +1,84 @@
+<ion-header>
+
+  <div *ngIf="user" class="profile">
+    <ion-item class="profile-header" lines="none">
+      <ion-avatar style="height: 80px;width:80px" slot="start">
+        <img *ngIf="user.photoURL"  [src]="user.photoURL" />
+        <img src="https://i.imgur.com/Nc4l643.png" *ngIf="!user.photoURL" />
+      </ion-avatar>
+      <div class="profile-header-content">
+        <h4 *ngIf="user.displayName">{{user.displayName}}</h4>
+        <h4 *ngIf="!user.displayName">{{user.email}}</h4>
+        <small *ngIf="user.displayName">{{user.email}}</small>
+      </div>
+    </ion-item>
+  </div>
+</ion-header>
+
+<ion-content class="ion-no-padding">
+  <!-- <ion-item [routerLink]="['notification']" class="ion-activatable" lines="none">
+    <ion-icon name="notifications-outline" color="primary" style="font-size: 30px;"></ion-icon>
+    <ion-label style="padding-left: 10px;">Notification</ion-label>
+    <ion-icon name="chevron-forward-outline" color="dark" style="font-size: 30px;"></ion-icon>
+    <ion-ripple-effect type="bounded"></ion-ripple-effect>
+  </ion-item> -->
+
+
+  <ion-item class="ion-activatable" lines="none">
+    <ion-icon name="moon-outline" color="primary" style="font-size: 30px;"></ion-icon>
+    <ion-label style="padding-left: 10px;">Dark Mode</ion-label>
+    <ion-toggle (ionChange)="toggleDark()" [checked]="isDarkModeEnable"></ion-toggle>
+    <ion-ripple-effect type="bounded"></ion-ripple-effect>
+  </ion-item>
+
+  <ion-item [routerLink]="['terms']" class="ion-activatable" lines="none">
+    <ion-icon name="book-outline" color="secondary" style="font-size: 30px;"></ion-icon>
+    <ion-label style="padding-left: 10px;">Terms & Condition</ion-label>
+    <ion-icon name="chevron-forward-outline" color="dark" style="font-size: 30px;"></ion-icon>
+    <ion-ripple-effect type="bounded"></ion-ripple-effect>
+  </ion-item>
+
+  <ion-item [routerLink]="['privacy']" class="ion-activatable" lines="none">
+    <ion-icon name="shield-checkmark-outline" color="success" style="font-size: 30px;"></ion-icon>
+    <ion-label style="padding-left: 10px;">Privacy Policy</ion-label>
+    <ion-icon name="chevron-forward-outline" color="dark" style="font-size: 30px;"></ion-icon>
+    <ion-ripple-effect type="bounded"></ion-ripple-effect>
+  </ion-item>
+
+  <ion-item [routerLink]="['help']" class="ion-activatable" lines="none">
+  <ion-icon name="information-circle-outline" color="warning" style="font-size: 30px;"></ion-icon>
+    <ion-label style="padding-left: 10px;">Help Center</ion-label>
+    <ion-icon name="chevron-forward-outline" color="dark" style="font-size: 30px;"></ion-icon>
+    <ion-ripple-effect type="bounded"></ion-ripple-effect>
+  </ion-item>
+
+
+  <ion-item [routerLink]="['about']" class="ion-activatable" lines="none">
+    <ion-icon name="people-circle-outline" color="info" style="font-size: 30px;"></ion-icon>
+    <ion-label style="padding-left: 10px;">About Us</ion-label>
+    <ion-icon name="chevron-forward-outline" color="dark" style="font-size: 30px;"></ion-icon>
+    <ion-ripple-effect type="bounded"></ion-ripple-effect>
+  </ion-item>
+
+  <!-- <ion-item [routerLink]="['invite']" class="ion-activatable" lines="none">
+    <ion-icon name="share-social-outline" color="info" style="font-size: 30px;"></ion-icon>
+    <ion-label style="padding-left: 10px;">Invite Friends</ion-label>
+    <ion-icon name="chevron-forward-outline" color="dark" style="font-size: 30px;"></ion-icon>
+    <ion-ripple-effect type="bounded"></ion-ripple-effect>
+  </ion-item> -->
+
+  <ion-item (click)="logout()" class="ion-activatable" lines="none">
+    <ion-icon name="log-out-outline" color="danger" style="font-size: 30px;"></ion-icon>
+    <ion-label style="padding-left: 10px;">Log Out</ion-label>
+    <ion-icon name="chevron-forward-outline" color="dark" style="font-size: 30px;"></ion-icon>
+    <ion-ripple-effect type="bounded"></ion-ripple-effect>
+  </ion-item>
+
+
+ 
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title style="text-align: center;font-size: 14px;">Version 1.0</ion-title>
+  </ion-toolbar>
+</ion-footer>  

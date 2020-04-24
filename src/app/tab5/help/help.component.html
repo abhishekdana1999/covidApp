@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab5"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Help</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="">
+    <div class="Notify">
+        Please do not close app until chat is over.
+    </div>
+    <div *ngIf="user" class="ion-padding">
+      <ion-item class="sender-message">
+     
+        <ion-label>
+          Hello There,
+        </ion-label>
+        <ion-avatar slot="end">
+          <img [src]="user.photoURL">
+        </ion-avatar>
+      </ion-item>
+      
+      <ion-item class="reciver-message">
+        <ion-avatar slot="start">
+          <img src="https://www.edoramedia.com/images/no_avatar.png">
+        </ion-avatar>
+        <ion-label>
+          Hey, how can i help you?
+        </ion-label>
+      </ion-item>
+     
+    
+    </div>
+</ion-content>
+<ion-footer *ngIf="messageUI">
+  <ion-toolbar>
+      <ion-input  type="text"  [(ngModel)]="message" placeholder="Start Chat"></ion-input>
+      <ion-buttons (click)="sendMessage($event)" slot="end">
+        <ion-icon slot="icon-only"  name="send" style="font-size: 18px;padding: 16px;"></ion-icon>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

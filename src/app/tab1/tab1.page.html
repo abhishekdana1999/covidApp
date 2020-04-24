@@ -1,0 +1,88 @@
+<ion-header color="transparent" [translucent]="false">
+  <ion-toolbar>
+    <ion-item *ngIf="countries" color="transparent" no-lines style="width: 100%;">
+      <!-- <ion-select value="India" [(ngModel)]="SelectedCountry" (ionChange)="getDatabyCountry($event)">
+        <ion-select-option *ngFor="let item of countries;let i = index" [value]="item.Country">{{item.Country}}
+        </ion-select-option>
+      </ion-select> -->
+      <ionic-selectable
+      [(ngModel)]="SelectedCountry"
+      [items]="countries"
+      itemValueField="Country"
+      itemTextField="Country"
+      [canSearch]="true"
+      mode="md"
+      (onChange)="getDatabyCountry($event)">
+    </ionic-selectable>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="false">
+  
+  <ion-card class="top-card">
+    <ion-row>
+      <ion-col size="4">
+        <ion-icon color="danger" name="shield-checkmark-outline"></ion-icon>
+        <br>  
+        <ion-label color="danger">Confirmed</ion-label>
+        <br>
+        <ion-text color="danger">
+          <h6 >{{confirmed}}</h6>
+        </ion-text>
+      </ion-col>
+      <ion-col size="4">
+        <ion-icon color="warning" name="bonfire-outline"></ion-icon>
+        <br>
+        <ion-label color="warning">Deaths</ion-label>
+        <br>
+        <ion-text color="warning">
+          <h6 >{{deaths}}</h6>
+        </ion-text>
+      </ion-col>
+      <ion-col size="4">
+        <ion-icon color="success" name="medkit-outline"></ion-icon>
+        <br>
+        <ion-label color="success">Recovered</ion-label>
+        <br>
+        <ion-text color="success">
+          <h6 >{{recovered}}</h6>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-card color="step-600" class="bold">
+    <ion-card-content>
+      <canvas height="300" #confirmedChart></canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">State</th>
+          <th scope="col">Date</th>
+          <th scope="col">Confirmed</th>
+          <th scope="col">Deaths</th>
+          <th scope="col">Recovered</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background: none;padding: 0;border: 0">
+          <ion-searchbar style="padding: 0;" placeholder="Search State" type="text" (ionInput)="onSearchChange($event)"></ion-searchbar>
+        </tr>
+        <tr *ngFor="let item of StateWiseData">
+          <td scope="row" data-label="State">{{item[1].name}}</td>
+          <td data-label="Date">{{item[1].lastUpdated | date: "MMM, dd"}}</td>
+          <td data-label="Confirmed">{{item[1].confirmed}}</td>
+          <td data-label="Deaths">{{item[1].deaths}}</td>
+          <td data-label="Recovered">{{item[1].recovered}}</td>
+        </tr>
+      
+      </tbody>
+    </table>
+  </ion-card>
+
+  
+</ion-content>

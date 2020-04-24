@@ -1,0 +1,103 @@
+ionic-selectable {
+    font-weight: 600;
+    font-family: Ubuntu;
+    font-size: 20px;
+    width: 100%;
+    max-width: 100%;
+    padding-left:0 ;
+}
+
+
+ion-card{
+    padding: 0 !important;
+    margin-bottom: 25px;
+  }
+  
+  td , ion-card{
+    font-family: ubuntu;
+  }
+  
+
+ion-card.top-card{
+    box-shadow: none !important;
+    padding: 16px;
+    text-align: center;
+    font-family: Ubuntu;
+
+    & ion-label{
+        font-size: 14px;
+        font-weight: 600;
+        
+    }
+
+    & ion-icon {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+}
+
+
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  
+  table tr {
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+  }
+  
+  table th, table td {
+    padding: .625em;
+    text-align: center;
+  }
+  
+  table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+
+
+  @media screen and (max-width: 639px) {
+
+    table { border: 0; }
+    
+    
+    
+    table tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: .625em;
+    }
+    
+    table td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: .8em;
+      text-align: right;
+    }
+    
+    table thead  {
+        display: none;
+      }
+
+    table td:before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    table td:last-child { border-bottom: 0; }
+    
+    }
+
+    ion-slides {
+      height: 220px;
+    }

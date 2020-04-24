@@ -1,0 +1,43 @@
+ion-content ion-toolbar {
+  --background: translucent;
+}
+
+ion-card{
+  padding: 0 !important;
+  margin-bottom: 25px;
+}
+
+td , ion-card{
+  font-family: ubuntu;
+}
+
+th{
+  text-overflow: ellipsis;
+  font-family: 700;
+  /* Required for text-overflow to do anything */
+  white-space: nowrap;
+  overflow: hidden;
+}
+#myTable {
+  border-collapse: collapse; /* Collapse borders */
+
+  border: 1px solid #ddd; /* Add a grey border */
+  font-size: 18px; /* Increase font-size */
+}
+
+#myTable th, #myTable td {
+  text-align: center; /* Left-align text */
+  padding: 12px 0;
+  font-size: 12px; /* Add padding */
+}
+
+#myTable tr {
+  /* Add a bottom border to all table rows */
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  /* Add a grey background color to the table header and on hover */
+  
+}
+

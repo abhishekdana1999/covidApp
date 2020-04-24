@@ -1,0 +1,8 @@
+{
+  "name": "covidAnalysis",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}
