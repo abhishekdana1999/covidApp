@@ -5,7 +5,7 @@
   </ion-toolbar>
   <ion-toolbar>
     <ion-buttons>
-      <ion-searchbar  placeholder="Search News"  (ionChange)="onSearchChange($event)" ></ion-searchbar>
+      <ion-searchbar  placeholder="Search News"  (keyup.enter)="onSearchChange($event)" ></ion-searchbar>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -19,8 +19,8 @@
       refreshingText="Refreshing...">
     </ion-refresher-content>
   </ion-refresher>
-  <div *ngFor="let item of newsData.items" class="grid">
-    <ion-card  class="card">
+  <div *ngFor="let item of newsData.items" class="grid ion-activatable ripple-parent">
+    <ion-card  class="card ">
       <div class="card__image" >
         <div class="card__overlay ">
           <div  class="card__overlay-content">
@@ -36,7 +36,9 @@
           </div>
         </div>
       </div>
+      
     </ion-card>
+    <ion-ripple-effect></ion-ripple-effect>
 </div>
 
 </ion-content>

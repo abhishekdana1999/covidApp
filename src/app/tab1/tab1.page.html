@@ -5,30 +5,24 @@
         <ion-select-option *ngFor="let item of countries;let i = index" [value]="item.Country">{{item.Country}}
         </ion-select-option>
       </ion-select> -->
-      <ionic-selectable
-      [(ngModel)]="SelectedCountry"
-      [items]="countries"
-      itemValueField="Country"
-      itemTextField="Country"
-      [canSearch]="true"
-      mode="md"
-      (onChange)="getDatabyCountry($event)">
-    </ionic-selectable>
+      <ionic-selectable [(ngModel)]="SelectedCountry" [items]="countries" itemValueField="Country"
+        itemTextField="Country" [canSearch]="true" mode="md" (onChange)="getDatabyCountry($event)">
+      </ionic-selectable>
     </ion-item>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="false">
-  
-  <ion-card class="top-card">
+
+  <ion-card mode="ios" style="margin-top: 35px;" class="top-card">
     <ion-row>
       <ion-col size="4">
         <ion-icon color="danger" name="shield-checkmark-outline"></ion-icon>
-        <br>  
+        <br>
         <ion-label color="danger">Confirmed</ion-label>
         <br>
         <ion-text color="danger">
-          <h6 >{{confirmed}}</h6>
+          <h6>{{confirmed}}</h6>
         </ion-text>
       </ion-col>
       <ion-col size="4">
@@ -37,7 +31,7 @@
         <ion-label color="warning">Deaths</ion-label>
         <br>
         <ion-text color="warning">
-          <h6 >{{deaths}}</h6>
+          <h6>{{deaths}}</h6>
         </ion-text>
       </ion-col>
       <ion-col size="4">
@@ -46,7 +40,7 @@
         <ion-label color="success">Recovered</ion-label>
         <br>
         <ion-text color="success">
-          <h6 >{{recovered}}</h6>
+          <h6>{{recovered}}</h6>
         </ion-text>
       </ion-col>
     </ion-row>
@@ -70,7 +64,8 @@
       </thead>
       <tbody>
         <tr style="background: none;padding: 0;border: 0">
-          <ion-searchbar style="padding: 0;" placeholder="Search State" type="text" (ionInput)="onSearchChange($event)"></ion-searchbar>
+          <ion-searchbar style="padding: 0;" placeholder="Search State" type="text" (ionInput)="onSearchChange($event)">
+          </ion-searchbar>
         </tr>
         <tr *ngFor="let item of StateWiseData">
           <td scope="row" data-label="State">{{item[1].name}}</td>
@@ -79,10 +74,10 @@
           <td data-label="Deaths">{{item[1].deaths}}</td>
           <td data-label="Recovered">{{item[1].recovered}}</td>
         </tr>
-      
+
       </tbody>
     </table>
   </ion-card>
 
-  
+
 </ion-content>

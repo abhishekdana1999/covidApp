@@ -1,36 +1,7 @@
-.Notify{
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    padding: 16px;
-    font-family: Ubuntu;
-    background: #121212;
-}
-
-.sender-message{
-    
-    float:right;
-    border-radius: 25px;
-    margin-right:10px;
-    background: #5A5EB9;
-    color:white;
-    margin: 10px 0;
-    clear:both;
-    max-width: 75%;
-}
-
-.reciver-message{
-    background: whitesmoke;
-    
-    color: #666;
-    max-width: 75%;
-    float: left;
-    margin-left: 10px;
-      margin: 10px 0;
-    position: relative;
-    margin-bottom: 20px;
-    border-radius: 25px;
-      clear:both;
+form {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  
+  align-items: center;
 }

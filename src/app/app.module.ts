@@ -29,16 +29,15 @@ import { IonicStorageModule } from '@ionic/storage';
 import { Contacts } from "@ionic-native/contacts/ngx";
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 import { HTTP } from "@ionic-native/http/ngx"
-
-
+import { ScreenOrientation } from "@ionic-native/screen-orientation/ngx"
 @NgModule({
   declarations: [AppComponent ],
   entryComponents: [],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule,
+    
+   
     TabsPageModule,
     AppRoutingModule,
     SecurityModule,
@@ -62,6 +61,7 @@ import { HTTP } from "@ionic-native/http/ngx"
     InAppBrowser,
     Contacts,
     AndroidPermissions,
+    ScreenOrientation,
     HTTP,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],

@@ -44,6 +44,7 @@ export class Tab3Page {
     await loading.present();
     this.appService.getData().subscribe(res => {
       this.data = res;
+     
       this.countries = this.data['Countries'];
       this.countries.sort((a, b) => (a.TotalConfirmed < b.TotalConfirmed) ? 1 : -1);
       loading.dismiss();

@@ -7,38 +7,22 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="">
-    <div class="Notify">
-        Please do not close app until chat is over.
-    </div>
-    <div *ngIf="user" class="ion-padding">
-      <ion-item class="sender-message">
-     
-        <ion-label>
-          Hello There,
-        </ion-label>
-        <ion-avatar slot="end">
-          <img [src]="user.photoURL">
-        </ion-avatar>
+<ion-content class="ion-padding">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-label position="floating">Name <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required formControlName="name" type="text"></ion-input>
       </ion-item>
-      
-      <ion-item class="reciver-message">
-        <ion-avatar slot="start">
-          <img src="https://www.edoramedia.com/images/no_avatar.png">
-        </ion-avatar>
-        <ion-label>
-          Hey, how can i help you?
-        </ion-label>
+      <ion-item>
+        <ion-label position="floating">E-Mail <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required formControlName="email" type="text"></ion-input>
       </ion-item>
-     
-    
-    </div>
+      <ion-item>
+        <ion-label position="floating">Message <ion-text color="danger">*</ion-text></ion-label>
+        <ion-textarea required formControlName="message" type="text"></ion-textarea>
+      </ion-item>
+      <ion-button size="large" block color="dark" fill="outline" type="submit" [disabled]="loginForm.invalid">
+        Send
+      </ion-button>
+    </form>
 </ion-content>
-<ion-footer *ngIf="messageUI">
-  <ion-toolbar>
-      <ion-input  type="text"  [(ngModel)]="message" placeholder="Start Chat"></ion-input>
-      <ion-buttons (click)="sendMessage($event)" slot="end">
-        <ion-icon slot="icon-only"  name="send" style="font-size: 18px;padding: 16px;"></ion-icon>
-      </ion-buttons>
-  </ion-toolbar>
-</ion-footer>

@@ -13,6 +13,7 @@ import { NotificationComponent } from './notification/notification.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { HelpComponent } from './help/help.component';
 import { InviteComponent } from './invite/invite.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
 
@@ -21,7 +22,7 @@ import { InviteComponent } from './invite/invite.component';
     FormsModule,
     IonicModule,
     Tab5PageRoutingModule,
-   
+    ReactiveFormsModule
   ],
   declarations: [Tab5Page ,  AboutComponent,
     TermsComponent,

@@ -3,6 +3,7 @@ import { HttpClient, HttpRequest } from "@angular/common/http";
 import { AngularFireAuth } from "@angular/fire/auth";
 import { LoadingController } from "@ionic/angular";
 import { CometChat } from "@cometchat-pro/chat";
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 export interface MessageUI {
   name: string;
@@ -18,50 +19,32 @@ export interface MessageUI {
 })
 export class HelpComponent implements OnInit {
   
-  user: any;
-  senderMessages: MessageUI[]  = [] as MessageUI[];
-  recieverMessage: MessageUI[] = [] as MessageUI[];
-  messageUI: MessageUI = {} as MessageUI;
-  message: any;
+  loginForm: FormGroup;
+
   constructor(
     private http: HttpClient,
-    private afAuth: AngularFireAuth,
-    private loadCtrl: LoadingController
-  ) {}
+    
+    private loadCtrl: LoadingController,
+    private formBuilder: FormBuilder
+  ) {
+    this.loginForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      email: ['' , Validators.required],
+      message: ['' , Validators.required]
+    });
+  }
 
   ngOnInit() {
-    this.getData()
-  }
-
-  async getData() {
-    const loading = await this.loadCtrl.create({
-      message: "Loading...",
-      spinner: "dots",
-      animated: true,
-      mode: "ios",
-      duration: 10000,
-    });
-    await loading.present();
-    this.afAuth.authState.subscribe((resp) => {
-      this.user = resp;
-      this.loadCtrl.dismiss();
-      this.messageUI.name = resp.displayName;
-      this.messageUI.image = resp.photoURL;
-      this.messageUI.date = new Date();
-    });
-  }
-
-  sendMessage(event) {
-    
-    if(event.keyCode == 13 || event.type == "click")
-    {
-      this.messageUI.message = this.message;
-      this.senderMessages.push(this.messageUI);
-      this.recieverMessage.push(this.messageUI);
-      console.log(this.recieverMessage , this.senderMessages)
-      this.message = ""
-    }
-
     
   }
+
+  onSubmit()
+  {
+    const data = this.loginForm.value;
+    this.http.post("https://api.whatsapp.com/send?phone=+917304541557" , {text: `<p>Name: ${data.name}</p><br><p>Email: ${data.email}</p><br><p>Message: ${data.message}</p>`}).subscribe(resp => {
+      alert(resp)
+    })
+  }
+
+  
 }

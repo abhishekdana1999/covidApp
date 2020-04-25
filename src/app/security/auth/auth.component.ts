@@ -19,7 +19,8 @@ export class AuthComponent implements OnInit {
     private authService: AuthService,
     private route: Router,
     private loadCtrl: LoadingController,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
+    
   ) {}
 
   async ngOnInit() {
