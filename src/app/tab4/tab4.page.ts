@@ -34,8 +34,7 @@ export class Tab4Page implements OnInit {
 
     this.http.get("https://api.rss2json.com/v1/api.json?rss_url=https://news.google.com/rss/search?q=covid&country=india&hl=en-IN&gl=IN&ceid=IN:en").subscribe((resp: any) => {
       this.newsData = resp;
-      console.log(resp);
-      
+     
       loading.dismiss();
       
     })

@@ -24,7 +24,7 @@
     </ion-refresher-content>
   </ion-refresher>
   <ion-list>
-    <ion-card *ngFor="let country of countries ">
+    <ion-card *ngFor="let country of countries " class="ion-activatable ripple-parent">
       <ion-item>
         <ion-label>{{country.Country}}</ion-label>
       </ion-item>
@@ -55,7 +55,7 @@
           </tr>
         </table>
       </ion-card-content>
-     
+      <ion-ripple-effect></ion-ripple-effect>   
     </ion-card>
 
     

@@ -19,8 +19,8 @@
       refreshingText="Refreshing...">
     </ion-refresher-content>
   </ion-refresher>
-  <div *ngFor="let item of newsData.items" class="grid ion-activatable ripple-parent">
-    <ion-card  class="card ">
+  <div *ngFor="let item of newsData.items" class="grid ">
+    <ion-card  class="card ion-activatable ripple-parent">
       <div class="card__image" >
         <div class="card__overlay ">
           <div  class="card__overlay-content">
@@ -36,9 +36,9 @@
           </div>
         </div>
       </div>
-      
+      <ion-ripple-effect></ion-ripple-effect>   
     </ion-card>
-    <ion-ripple-effect></ion-ripple-effect>
+   
 </div>
 
 </ion-content>
