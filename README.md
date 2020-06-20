@@ -20,8 +20,13 @@ Install the dependencies and devDependencies and start the server.
 
 ```sh
 $ cd covidApp
-$ npm install -d
+$ npm install
 $ ionic serve
 ```
-  
-### This repo has been made public of users to contribute and take this application to next level & want to buy a coffee no need its just a application contribute and used it by youself.
+
+
+### This repo has been made public of users to contribute and take this application to next level & want to buy a coffee google pay. 
+
+Visit My Website
+
+[Abhishek Dana](http://abhishekdana.me/Mywebsite/#/)
