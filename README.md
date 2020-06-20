@@ -11,4 +11,17 @@ Covid-App is basically give the detail information of the corona virus cases in 
   - Daily News From Google.
   - Light & Dark Mode.
   
+
+### Installation
+
+Covid requires [Node.js](https://nodejs.org/) v4+ to run & also ionic latest version.
+
+Install the dependencies and devDependencies and start the server.
+
+```sh
+$ cd covidApp
+$ npm install -d
+$ ionic serve
+```
+  
 ### This repo has been made public of users to contribute and take this application to next level & want to buy a coffee no need its just a application contribute and used it by youself.
