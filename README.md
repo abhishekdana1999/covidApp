@@ -24,6 +24,12 @@ $ npm install
 $ ionic serve
 ```
 
+Screenshots 
+
+![Splash Screen](https://i.imgur.com/x8QAxoF.jpg)
+![Home Screen](https://i.imgur.com/iEHHHnL.jpg)
+![World Cases](https://i.imgur.com/WLSfhlb.jpg)
+![Map View](https://i.imgur.com/H2c83vu.jpg)
 
 ### This repo has been made public of users to contribute and take this application to next level & want to buy a coffee google pay. 
 
